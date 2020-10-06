@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+
+{% block content %}
+<br>
+
+<h1>Delete Stock</h1>    
+<br><br>
+
+{% if all_stocks %}
+
+	{% for stock in all_stocks %}
+
+		{{ stock.ticker }} - <a href="{% url 'delete' stock.id %}">Delete</a><br>
+
+	{% endfor %}
+{% endif %}
+
+{% endblock %}
